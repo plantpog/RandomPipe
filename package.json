@@ -1,0 +1,77 @@
+{
+  "name": "randompipe",
+  "displayName": "RandomPipe",
+  "description": "Plays the pipe crashing meme sound effect at random times while you code.",
+  "version": "0.0.1",
+  "publisher": "Sterben",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:randompipe.start",
+    "onCommand:randompipe.stop",
+    "onCommand:randompipe.toggle",
+    "onCommand:randompipe.playNow"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "randompipe.start",
+        "title": "RandomPipe: Start",
+        "category": "RandomPipe"
+      },
+      {
+        "command": "randompipe.stop",
+        "title": "RandomPipe: Stop",
+        "category": "RandomPipe"
+      },
+      {
+        "command": "randompipe.toggle",
+        "title": "RandomPipe: Toggle",
+        "category": "RandomPipe"
+      },
+      {
+        "command": "randompipe.playNow",
+        "title": "RandomPipe: Play Now",
+        "category": "RandomPipe"
+      }
+    ],
+    "configuration": {
+      "title": "RandomPipe configuration",
+      "properties": {
+        "randompipe.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable RandomPipe."
+        },
+        "randompipe.minIntervalMinutes": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "description": "Minimum interval between sounds (minutes)."
+        },
+        "randompipe.maxIntervalMinutes": {
+          "type": "number",
+          "default": 30,
+          "minimum": 1,
+          "description": "Maximum interval between sounds (minutes)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0",
+    "@vscode/vsce": "^2.0.0"
+  }
+}
