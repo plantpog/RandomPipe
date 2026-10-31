@@ -59,14 +59,6 @@ You can also click the status bar item at the bottom right to toggle.
 | `randompipe.minIntervalMinutes` | `5` | Minimum minutes between sounds |
 | `randompipe.maxIntervalMinutes` | `30` | Maximum minutes between sounds |
 
-## Replacing the Sound
-
-The extension ships with a placeholder noise burst so it works out of the box. To use the real pipe-crashing meme sound:
-
-1. Obtain a `.wav` file of the pipe crashing sound.
-2. Replace `src/media/pipe-crash.wav` with your file (keep the filename).
-3. Recompile (`npm run compile`) and reload/relaunch the extension.
-
 ## Development
 
 ```bash
